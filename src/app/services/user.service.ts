@@ -20,12 +20,16 @@ export class UserService {
     return result;
   }
   searchUserFromEmail(email) {
-    return this.remoteData.results.find((item) => {
-      return false;
+    if (this.remoteData) {
+      return this.remoteData.results.find((item: any) => {
+        if (item.email === email) {
+          return true;
+        }
+      }, (err) => {
+        return false;
+      });
+    }
+    return undefined;
 
-    }, (err) => {
-      return false;
-
-    });
   }
 }

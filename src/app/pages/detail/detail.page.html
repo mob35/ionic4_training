@@ -8,18 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card padding>
-    <img [src]="selectedUser?.picture.large" />
+  <ion-card padding *ngIf="user">
+    <img [src]="user?.picture.large" />
     <div>
       <h1>
-        {{selectedUser?.name.title}}.
-        {{selectedUser?.name.first}}
-        {{selectedUser?.name.last}}
+        {{user?.name.title}}.
+        {{user?.name.first}}
+        {{user?.name.last}}
       </h1>
     </div>
     <div>
-      <ion-label>{{selectedUser?.email}}</ion-label>
-      <ion-label>{{selectedUser?.phone}}</ion-label>
+      <ion-label>{{user?.email}}</ion-label>
+      <ion-label>{{user?.phone}}</ion-label>
     </div>
   </ion-card>
 </ion-content>

@@ -8,5 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card padding>
+    <img [src]="selectedUser?.picture.large" />
+    <div>
+      <h1>
+        {{selectedUser?.name.title}}.
+        {{selectedUser?.name.first}}
+        {{selectedUser?.name.last}}
+      </h1>
+    </div>
+    <div>
+      <ion-label>{{selectedUser?.email}}</ion-label>
+      <ion-label>{{selectedUser?.phone}}</ion-label>
+    </div>
+  </ion-card>
 </ion-content>

@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-
-  constructor() { }
+  selectedUser: any;
+  constructor(
+    private userService: UserService,
+  ) { }
 
   ngOnInit() {
+    this.selectedUser = this.userService.selectedUser;
+    console.log(this.selectedUser);
   }
 
 }

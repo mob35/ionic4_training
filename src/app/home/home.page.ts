@@ -24,7 +24,8 @@ export class HomePage {
     this.users = result.results;
 
   }
-  openDetail() {
+  openDetail(item) {
+    this.userService.selectedUser = item;
     this.navCtrl.navigateForward('/detail');
   }
 

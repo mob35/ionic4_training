@@ -6,6 +6,8 @@ import { RandomResult } from '../models/random-result';
   providedIn: 'root'
 })
 export class UserService {
+  
+  selectedUser: any;
 
   constructor(
     private http: HttpClient

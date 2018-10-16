@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -9,11 +10,17 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
 
   constructor(
-    private navCtrl:NavController
-  ){
+    private navCtrl: NavController,
+    private userService: UserService
+  ) {
+    this.loadUser();
+  }
+
+  loadUser() {
+    this.userService.getUsers();
 
   }
-  openDetail(){
+  openDetail() {
     this.navCtrl.navigateForward('/detail');
   }
 

@@ -1,6 +1,7 @@
-import { UserService } from './../services/user.service';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { UserService } from './../services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,19 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  users: any = [];
   constructor(
     private navCtrl: NavController,
-    private userService: UserService
+    private userService: UserService,
+    private http: HttpClient
   ) {
     this.loadUser();
   }
 
-  loadUser() {
-    this.userService.getUsers();
+  async loadUser() {
+    let result = await this.userService.getUsers();
+    console.log(result)
+    this.users = result.results;
 
   }
   openDetail() {

@@ -25,8 +25,8 @@ export class HomePage {
 
   }
   openDetail(item) {
-    this.userService.selectedUser = item;
-    this.navCtrl.navigateForward('/detail');
+    // this.userService.selectedUser = item;
+    this.navCtrl.navigateForward('/detail/' + item.email);
   }
 
 }
